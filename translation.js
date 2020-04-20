@@ -1,24 +1,30 @@
 /* basically the Agent and Customer classes */
-function Agent(id, name, skills, product, availability, queue) {
-    // details from contacts
-    this.id = id,
-    this.name = name,
-    this.skills = skills,
-    this.product = product,
-    this.availability = availability,
-    this.queue = queue
-};
+class Agent {
+    constructor(id, name, skills, product, availability, queue) {
+        // details from contacts
+        this.id = id,
+            this.name = name,
+            this.skills = skills,
+            this.product = product,
+            this.availability = availability,
+            this.queue = queue;
+    }
+}
+;
 
-function Customer(first, last, product, issue, agent) {
-    // details from the guest accounts
-    this.firstname = first,
-    this.lastname = last,
-    // details from the form
-    this.product = product,
-    this.issue = issue,
-    // log this somewhere?
-    this.agent = agent
-};
+class Customer {
+    constructor(first, last, product, issue, agent) {
+        // details from the guest accounts
+        this.firstname = first,
+            this.lastname = last,
+            // details from the form
+            this.product = product,
+            this.issue = issue,
+            // log this somewhere?
+            this.agent = agent;
+    }
+}
+;
 
 /* checks if the agent has <5 customers in the queue before being considered by the algorithm
    also sorts the list of agents according to most free to least free */
@@ -122,6 +128,7 @@ app.post('/form', (req, res)=>{
     //console.log(agentList);
 
     var customer = new Customer(guestFirstName, guestLastName, product, issue);
+    console.log(customer);
 
     /* agent assignment happens here*/
     for (agent of consider_available_agents(agentList)) {
