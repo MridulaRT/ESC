@@ -1,0 +1,24 @@
+﻿Test 1: {
+"answers" : ["Emac", "maintainance of parts", "c", "d"]
+}
+Assert: customer.agent = Sandeep; agent.queue = ["First Last"]
+
+Test 2: {
+"answers" : ["Ephone", "maintainance of parts", "c", "d"]
+}
+Assert: No available agents
+
+Test 3: {
+"answers" : ["Ephone", "hardware", "c", "d"]
+}
+Assert: No available agents
+
+Test 4: {
+"answers" : ["Epad", "replacement of parts", "c", "d"]
+}
+Assert: customer.agent = ZhaoYi; agent.queue = ["cs1", "cs2", "First Last"]
+
+Test 5: {
+"answers" : ["Epod", "product accessories", "c", "d"]
+}
+Assert: No available agents
