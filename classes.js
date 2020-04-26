@@ -37,7 +37,7 @@ exports.available = function consider_available_agents(agentList) {
             availableAgents.push(agent);
         }
     }
-    availableAgents.sort(function(a, b) {return (a.queue.length - b.queue.length)});
+    availableAgents.sort(function(a, b) {return (b.queue.length - a.queue.length)});
     return availableAgents;
 }
 
@@ -87,7 +87,7 @@ var database = {
             first: '1003123',
             last: 'James',
             product: 'Emac',
-            issue: 'others',
+            issue: 'replacement of parts',
             agent: undefined
         }
     ]
